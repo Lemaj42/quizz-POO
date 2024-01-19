@@ -1,0 +1,44 @@
+body {
+
+    background-image: url(../images/1609.m00.i125.n001.S.c12.198623492\ Topographic\ contour\ lines\ vector\ map\ seamless\ pattern.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+
+    margin-top: 50px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.podium {
+
+    margin-right: 20%;
+    background-size: cover;
+    width: 30%;
+    background-image: url(../images/png-clipart-computer-icons-symbol-podium-miscellaneous-rectangle.png);
+}
+
+.listScore {
+
+   
+    
+    background-size: cover;
+    width: 440px;
+    background-image: url(../images/image-inverse.jpg);
+    overflow-y:scroll ;
+}
+
+.list1 {
+    margin: 10px;
+    height: 90px;
+    width: 90%;
+    background-color: white;
+    color: rgb(0, 0, 0);
+
+}
