@@ -4,7 +4,7 @@ include "../setting/verification_superglobal.php";
 require_once "../setting/connexion.php";
 /* WHERE  REQUETTE A FINIR */
 $afficherScore = $connexion->prepare(
-    "SELECT * FROM score ");
+    "SELECT * FROM score JOIN users WHERE id_user = users.ID");
 $afficherScore->execute();
 
 $scoreADD = $afficherScore->fetchAll(PDO::FETCH_ASSOC);
@@ -38,12 +38,16 @@ $scoreADD = $afficherScore->fetchAll(PDO::FETCH_ASSOC);
 
     <section class="score">    
 
-    <div class="podium"></div>
+    <div> 
+    <?php foreach ($scoreADD as $key => $afficherScore1) {
+            ?><div class="list1"><?= $afficherScore1['user_name']?> a obtenue un score de : <?= $afficherScore1['score_total']?> </div>
+       <?php }?>
+    </div>
 
 
     <div class="listScore">
-        <?php foreach ($scoreADD as $afficherScore1) {
-            ?><div class="list1"><?= $afficherScore1['id_user']?> a obtenue un score de : <?= $afficherScore1['score_total']?> </div>
+        <?php foreach ($scoreADD as $key => $afficherScore1) {
+            ?><div class="list1"><?= $afficherScore1['user_name']?> a obtenue un score de : <?= $afficherScore1['score_total']?> </div>
        <?php }?>
     </div>
 

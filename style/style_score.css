@@ -42,3 +42,11 @@ body {
     color: rgb(0, 0, 0);
 
 }
+
+.score_user {
+
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
