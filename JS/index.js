@@ -1,18 +1,19 @@
 let btnquestion = document.querySelector("BTNquestion")
 
-btnquestion.addEventListener("submit", function(){
+btnquestion.addEventListener("submit", function(e){
 
-    // prevenretn defaut 
+    (e).preventDefault()
 
+     setTimeout(() => {
 
-    if () {
-        
-    } else {
-        
-    }
-    
+      if (btnquestion.value = 0) {
 
-    setTimeout(() => {
-        
-    }, timeout);
-})
+         btnquestion.classList.add("backgroundGreen")
+      } else {
+         btnquestion.classList.add("backgroundRed")
+      }
+            
+     }, 3000);
+
+     (e).preventDefault()
+})  

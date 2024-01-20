@@ -1,10 +1,10 @@
 <?php
 session_start();
-include "../setting/verification_superglobal.php";
+//include "../setting/verification_superglobal.php";
 require_once "../setting/connexion.php";
 /* WHERE  REQUETTE A FINIR */
 $afficherScore = $connexion->prepare(
-    "SELECT * FROM score JOIN users WHERE id_user = users.ID");
+    "SELECT * FROM score JOIN users WHERE id_user = users.ID ORDER BY score_total DESC");
 $afficherScore->execute();
 
 $scoreADD = $afficherScore->fetchAll(PDO::FETCH_ASSOC);
@@ -38,17 +38,19 @@ $scoreADD = $afficherScore->fetchAll(PDO::FETCH_ASSOC);
 
     <section class="score">    
 
-    <div> 
-    <?php foreach ($scoreADD as $key => $afficherScore1) {
-            ?><div class="list1"><?= $afficherScore1['user_name']?> a obtenue un score de : <?= $afficherScore1['score_total']?> </div>
-       <?php }?>
+    <div class="top3"> 
+        <?php foreach ($scoreADD as $key => $afficherScore1) {
+                if($key < 3){ 
+                    ?><div class="list1"><b><?= $afficherScore1['user_name']?></b> a obtenue un score de : <?= $afficherScore1['score_total']?> </div>
+        <?php } }?>
     </div>
 
 
     <div class="listScore">
         <?php foreach ($scoreADD as $key => $afficherScore1) {
-            ?><div class="list1"><?= $afficherScore1['user_name']?> a obtenue un score de : <?= $afficherScore1['score_total']?> </div>
-       <?php }?>
+                if ($key > 3) {
+                    ?><div class="list2"><b><?= $afficherScore1['user_name']?></b> a obtenue un score de : <?= $afficherScore1['score_total']?> </div>
+        <?php } }?>
     </div>
 
     </section>

@@ -3,7 +3,7 @@ session_start();
 if (!empty($_SESSION['users']) && $_SESSION['users'] !== 'lucas') { 
     header("Location: ../index.php");
 }
-include "../setting/verification_superglobal.php";
+//include "../setting/verification_superglobal.php";
 require_once "../setting/connexion.php";
 ?>
 

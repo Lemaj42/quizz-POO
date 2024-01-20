@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../setting/verification_superglobal.php";
+//include "../setting/verification_superglobal.php";
 require_once "../setting/connexion.php";
 
         // REQUETES POUR LES QUESTIONS EN RANDOM
@@ -59,7 +59,7 @@ $afficherReponse->execute([
     <form action="../process/true_or_false.php" class="response" method="post">
 
         <?php  foreach ($responseADD as $responseADD1) { ?>  
-            <button id="BTNquestion"type="submit" name="click_response" value="<?=$responseADD1['goodanswer'] ?>"> <?=$responseADD1['reponse_content'] ?> </button>
+            <button id="BTNquestion" class="" type="submit" name="click_response" value="<?=$responseADD1['goodanswer'] ?>"> <?=$responseADD1['reponse_content'] ?> </button>
             <input type="hidden" name="IDquestions" value="<?=[$questionsADD['ID_question']]?>">
             <?php } ?>
     </form>
