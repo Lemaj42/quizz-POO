@@ -17,7 +17,7 @@ require_once "./setting/connexion.php";
     <div class="titre"> 
         <h1> Nom du Quizz</h1>
     </div>
-    <div>
+    <div class="connectedUser">
         <?php if (!empty($_SESSION['users'])) {
                 ?>Connecter en temps que : <?=$_SESSION['users'];
         }else {

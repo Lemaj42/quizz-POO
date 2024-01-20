@@ -58,15 +58,15 @@ $afficherReponse->execute([
 
     <form action="../process/true_or_false.php" class="response" method="post">
 
-        <?php  foreach ($responseADD as $responseADD1) { ?>  
-            <button id="BTNquestion" class="" type="submit" name="click_response" value="<?=$responseADD1['goodanswer'] ?>"> <?=$responseADD1['reponse_content'] ?> </button>
+        <?php  foreach ($responseADD as $key => $responseADD1) { ?>  
+            <button id="BTNQuestion<?php echo $key; ?>" class="" type="submit" name="click_response" value="<?=$responseADD1['goodanswer'] ?>"> <?=$responseADD1['reponse_content'] ?> </button>
             <input type="hidden" name="IDquestions" value="<?=[$questionsADD['ID_question']]?>">
             <?php } ?>
     </form>
 
     </section>
 
-            <script src="../JS/index.js"></script>
+        <script src="../JS/index.js"></script>
 </body>
 </html>
 

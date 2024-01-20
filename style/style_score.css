@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 .score {
@@ -70,4 +70,15 @@ body {
 .top3 {
 
     justify-content: center ;
+}
+
+.acceuil {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        width: 70px;
+        height: 30px;
+        background-color: black;
 }

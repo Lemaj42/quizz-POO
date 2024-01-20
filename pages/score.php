@@ -1,6 +1,6 @@
 <?php
 session_start();
-//include "../setting/verification_superglobal.php";
+include "../setting/verification_superglobal.php";
 require_once "../setting/connexion.php";
 /* WHERE  REQUETTE A FINIR */
 $afficherScore = $connexion->prepare(
@@ -25,13 +25,18 @@ $scoreADD = $afficherScore->fetchAll(PDO::FETCH_ASSOC);
         
         <div class="score_user">
 
-        <?php if (!empty($_SESSION['users'])) {
-            
-                 if ($_SESSION['points'] > 5) {
+        <?php if (!isset($_SESSION['points'])) {
+
+                    ?> Pas de score pour l'instant...<?php
+
+                 } else {
+                
+                if ($_SESSION['points'] > 5) {
                     ?> <p>Votre score : <?=$_SESSION['points']?> Bien joué ! </p> <?php
                 }else {
                     ?> <p>Votre score : <?=$_SESSION['points']?> NUL !!! </p> <?php
                 } 
+            
         } ?>
             
         </div>
@@ -56,11 +61,13 @@ $scoreADD = $afficherScore->fetchAll(PDO::FETCH_ASSOC);
     </section>
 
 
-    <section class="acceuil">
+    <section  class="acceuil">
+       
         <form action="../setting/session_unset.php" method="post">
         <button type="submit">Acceuil</button>
         </form>
+        
     </section>
 
 </body>
-</html>
+</html> 
